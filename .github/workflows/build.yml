@@ -1,4 +1,4 @@
-name: Build and Push to JFrog
+name: Build, Push to JFrog, and Xray Scan
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
       - name: Package JAR
         run: mvn clean package -DskipTests=false
 
-      # Step 6 - Log in to JFrog Artifactory Docker registry
+      # Step 6 - Docker login to JFrog
       - name: Docker login to JFrog
         run: echo "${{ secrets.JFROG_PASSWORD }}" | docker login ${{ secrets.JFROG_REGISTRY }} -u "${{ secrets.JFROG_USERNAME }}" --password-stdin
 
@@ -43,6 +43,39 @@ jobs:
       - name: Build Docker image
         run: docker build -t ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest .
 
-      # Step 8 - Push Docker image
+      # Step 8 - Push Docker image to JFrog
       - name: Push Docker image
         run: docker push ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest
+
+      # Step 9 - Install JFrog CLI
+      - name: Install JFrog CLI
+        run: |
+          curl -fL https://getcli.jfrog.io | sh
+          chmod +x jfrog
+          sudo mv jfrog /usr/local/bin/
+
+      # Step 10 - Configure JFrog CLI
+      - name: Configure JFrog CLI
+        run: |
+          jfrog config add my-server \
+            --url https://${{ secrets.JFROG_REGISTRY }} \
+            --user ${{ secrets.JFROG_USERNAME }} \
+            --password ${{ secrets.JFROG_PASSWORD }} \
+            --interactive=false
+
+      # Step 11 - Xray scan the Docker image and export JSON
+      - name: Xray Scan Docker Image
+        run: |
+          mkdir -p reports
+          jfrog xr scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format json > reports/xray-scan.json
+
+      # Step 12 - Commit scan report back to repo
+      - name: Commit scan report
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/xray-scan.json
+          git commit -m "Add Xray scan report"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
