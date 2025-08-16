@@ -68,7 +68,7 @@ jobs:
       - name: Xray Scan Docker Image
         run: |
           mkdir -p reports
-          jfrog xr scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format json > reports/xray-scan.json
+          jfrog xr docker scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format json > reports/xray-scan.json
 
       # Step 12 - Commit scan report back to repo
       - name: Commit scan report
