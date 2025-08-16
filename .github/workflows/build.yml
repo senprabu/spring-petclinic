@@ -63,6 +63,11 @@ jobs:
             --user ${{ secrets.JFROG_USERNAME }} \
             --password ${{ secrets.JFROG_PASSWORD }} \
             --interactive=false
+      # Step 10.1 - Configure to install JFrog CLI
+      - name: Install JFrog CLI v2
+        run: |
+          curl -fL https://getcli.jfrog.io | sh
+          mv jfrog /usr/local/bin/jf
 
       # Step 11 - Xray scan the Docker image and export JSON
       - name: Xray Scan Docker Image
