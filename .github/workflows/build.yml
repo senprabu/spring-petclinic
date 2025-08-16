@@ -52,17 +52,18 @@ jobs:
       - name: Install JFrog CLI
         run: |
           curl -fL https://getcli.jfrog.io | sh
-          chmod +x jfrog
-          sudo mv jfrog /usr/local/bin/
+          sudo mv jfrog /usr/local/bin/jf
 
       # Step 10 - Configure JFrog CLI
       - name: Configure JFrog CLI
         run: |
-          jfrog config add my-server \
-            --url https://${{ secrets.JFROG_REGISTRY }} \
-            --user ${{ secrets.JFROG_USERNAME }} \
-            --password ${{ secrets.JFROG_PASSWORD }} \
+          jf config add my-server \
+            --url "https://${{ secrets.JFROG_REGISTRY }}" \
+            --user "${{ secrets.JFROG_USERNAME }}" \
+            --password "${{ secrets.JFROG_PASSWORD }}" \
             --interactive=false
+          jf config use my-server
+
             
 #      # Step 10.1 - Configure to install JFrog CLI
 #      - name: Install JFrog CLI v2
@@ -74,7 +75,7 @@ jobs:
       - name: Xray Scan Docker Image
         run: |
           mkdir -p reports
-          jfrog xr docker scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format json > reports/xray-scan.json
+          jf docker scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format=json > reports/xray-scan.json
 
       # Step 12 - Commit scan report back to repo
       - name: Commit scan report
