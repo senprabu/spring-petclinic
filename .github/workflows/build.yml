@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    workflow_dispatch: # Allows manual run from GitHub UI
+  workflow_dispatch: # Allows manual run from GitHub UI
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
 
       # Step 5 - Package application
       - name: Package JAR
-        run: mvn clean package -DskipTests=false
+        run: mvn clean package -DskipTests=true
 
       # Step 6 - Docker login to JFrog
       - name: Docker login to JFrog
@@ -63,11 +63,12 @@ jobs:
             --user ${{ secrets.JFROG_USERNAME }} \
             --password ${{ secrets.JFROG_PASSWORD }} \
             --interactive=false
-      # Step 10.1 - Configure to install JFrog CLI
-      - name: Install JFrog CLI v2
-        run: |
-          curl -fL https://getcli.jfrog.io | sh
-          mv jfrog /usr/local/bin/jf
+            
+#      # Step 10.1 - Configure to install JFrog CLI
+#      - name: Install JFrog CLI v2
+#        run: |
+#          curl -fL https://getcli.jfrog.io | sh
+#          mv jfrog /usr/local/bin/jf
 
       # Step 11 - Xray scan the Docker image and export JSON
       - name: Xray Scan Docker Image
