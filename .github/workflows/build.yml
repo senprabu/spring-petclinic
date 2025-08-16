@@ -53,6 +53,7 @@ jobs:
         run: |
           curl -fL https://getcli.jfrog.io | sh
           sudo mv jfrog /usr/local/bin/jf
+          jf --version
 
       # Step 10 - Configure JFrog CLI
       - name: Configure JFrog CLI
@@ -71,11 +72,12 @@ jobs:
 #          curl -fL https://getcli.jfrog.io | sh
 #          mv jfrog /usr/local/bin/jf
 
-      # Step 11 - Xray scan the Docker image and export JSON
+      # Step 11 - Xray scan the Docker image and export JSON.
       - name: Xray Scan Docker Image
         run: |
           mkdir -p reports
-          jf docker scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format=json > reports/xray-scan.json
+          jf docker scan "${{ env.DOCKER_IMAGE }}" --format=json > reports/xray-scan.json
+      #   jf docker scan ${{ secrets.JFROG_REGISTRY }}/${{ secrets.JFROG_REPO }}/spring-petclinic:latest --format=json > reports/xray-scan.json
 
       # Step 12 - Commit scan report back to repo
       - name: Commit scan report
