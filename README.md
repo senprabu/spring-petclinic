@@ -35,7 +35,7 @@ docker run --rm -p 8080:8080 trialgh4oxk.jfrog.io/docker-local/spring-petclinic:
 
 ---
 
-## ✅ Prerequisites
+## 🔰 Prerequisites
 
 - **Git** installed (`git --version`)
 - **Java 17** + **Maven** for local builds
@@ -57,7 +57,7 @@ docker run --rm -p 8080:8080 trialgh4oxk.jfrog.io/docker-local/spring-petclinic:
 ├─ .github/
 │  └─ workflows/
 │     └─ build.yml
-└─ reports/ (created by workflow for Xray JSON)
+└─ reports/ 
 ```
 
 ---
@@ -234,7 +234,7 @@ Local path in the runner: `reports/xray-scan.json`.
 
 ---
 
-## 🧭 How to Run the Project
+## 🔰 How to Run the Project
 
 ### Option A — Local Maven
 ```bash
@@ -279,10 +279,10 @@ docker run --rm -p 8080:8080 trialgh4oxk.jfrog.io/docker-local/spring-petclinic:
 
 ## 📦 Deliverables Checklist
 
-- ✅ GitHub repo link (your fork)
+- ✅ GitHub repo link (https://github.com/senprabu/spring-petclinic)
 - ✅ `.github/workflows/build.yml`
 - ✅ `Dockerfile`
-- ✅ `README.md`
+- ✅ `README.md` (explaining the work and how to run the project)
 - ✅ `reports/xray-scan.json` (as workflow artifact)
 - ✅ JFrog Docker run command (documented above)
 
