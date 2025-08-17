@@ -1,0 +1,328 @@
+{ "total_rows" : 9,
+  "rows" : [
+{
+	"cves": [
+	{
+	"cve": "CVE-2025-49146",
+	"cvss_v3_score": 8.2,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N"
+	}
+	],
+	"cvss3_max_score": 8.2,
+	"severity": "High",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/META-INF/sbom/application.cdx.json/gav:/org.postgresql:postgresql:42.7.5/org.postgresql:postgresql:42.7.5",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.springframework.samples:spring-petclinic:3.5.0-SNAPSHOT",
+	"gav://org.postgresql:postgresql:42.7.5"
+	],
+	"fixed_versions": [
+	"42.7.7"
+	],
+	"issue_id": "XRAY-704393",
+	"project_keys": [],
+	"applicability": false,
+	"applicability_result": "not_applicable",
+	"summary": "pgjdbc is an open source postgresql JDBC Driver. From 42.7.4 and until 42.7.7, when the PostgreSQL JDBC driver is configured with channel binding set to required (default value is prefer), the driver would incorrectly allow connections to proceed with authentication methods that do not support channel binding (such as password, MD5, GSS, or SSPI authentication). This could allow a man-in-the-middle attacker to intercept connections that users believed were protected by channel binding requirements. This vulnerability is fixed in 42.7.7.",
+	"vulnerable_component": "gav://org.postgresql:postgresql:42.7.5",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-49146",
+	"cvss_v3_score": 8.2,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N"
+	}
+	],
+	"cvss3_max_score": 8.2,
+	"severity": "High",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/BOOT-INF/lib/postgresql-42.7.5.jar",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.postgresql:postgresql:42.7.5"
+	],
+	"fixed_versions": [
+	"42.7.7"
+	],
+	"issue_id": "XRAY-704393",
+	"project_keys": [],
+	"applicability": false,
+	"applicability_result": "not_applicable",
+	"summary": "pgjdbc is an open source postgresql JDBC Driver. From 42.7.4 and until 42.7.7, when the PostgreSQL JDBC driver is configured with channel binding set to required (default value is prefer), the driver would incorrectly allow connections to proceed with authentication methods that do not support channel binding (such as password, MD5, GSS, or SSPI authentication). This could allow a man-in-the-middle attacker to intercept connections that users believed were protected by channel binding requirements. This vulnerability is fixed in 42.7.7.",
+	"vulnerable_component": "gav://org.postgresql:postgresql:42.7.5",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-48988",
+	"cvss_v3_score": 7.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+	}
+	],
+	"cvss3_max_score": 7.5,
+	"severity": "High",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/META-INF/sbom/application.cdx.json/gav:/org.apache.tomcat.embed:tomcat-embed-core:10.1.41/org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.springframework.samples:spring-petclinic:3.5.0-SNAPSHOT",
+	"gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41"
+	],
+	"fixed_versions": [
+	"10.1.42",
+	"11.0.8",
+	"9.0.106"
+	],
+	"issue_id": "XRAY-704762",
+	"project_keys": [],
+	"applicability": false,
+	"applicability_result": "not_applicable",
+	"summary": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions \nmay also be affected.\n\n\nUsers are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.",
+	"vulnerable_component": "gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-48988",
+	"cvss_v3_score": 7.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+	}
+	],
+	"cvss3_max_score": 7.5,
+	"severity": "High",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/BOOT-INF/lib/tomcat-embed-core-10.1.41.jar",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41"
+	],
+	"fixed_versions": [
+	"10.1.42",
+	"11.0.8",
+	"9.0.106"
+	],
+	"issue_id": "XRAY-704762",
+	"project_keys": [],
+	"applicability": false,
+	"applicability_result": "not_applicable",
+	"summary": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Tomcat.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: 8.5.0 though 8.5.100. Other, older, EOL versions \nmay also be affected.\n\n\nUsers are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.",
+	"vulnerable_component": "gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2021-4214",
+	"cvss_v3_score": 5.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+	}
+	],
+	"cvss3_max_score": 5.5,
+	"severity": "Medium",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:4d125b9b630f45fe9fdd3dc16a36920f92fa7c1e01344de92d6b6e6f6b50c5db/sha256__4d125b9b630f45fe9fdd3dc16a36920f92fa7c1e01344de92d6b6e6f6b50c5db.tar.gz",
+	"alpine://3.22:libpng:1.6.47-r0"
+	],
+	"fixed_versions": [],
+	"issue_id": "XRAY-594241",
+	"project_keys": [],
+	"applicability": null,
+	"applicability_result": "not_covered",
+	"summary": "A heap overflow flaw was found in libpngs' pngimage.c program. This flaw allows an attacker with local network access to pass a specially crafted PNG file to the pngimage utility, causing an application to crash, leading to a denial of service.",
+	"vulnerable_component": "alpine://3.22:libpng:1.6.47-r0",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-41234",
+	"cvss_v3_score": 6.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N"
+	}
+	],
+	"cvss3_max_score": 6.5,
+	"severity": "Medium",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/META-INF/sbom/application.cdx.json/gav:/org.springframework:spring-web:6.2.7/org.springframework:spring-web:6.2.7",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.springframework.samples:spring-petclinic:3.5.0-SNAPSHOT",
+	"gav://org.springframework:spring-web:6.2.7"
+	],
+	"fixed_versions": [
+	"6.1.21",
+	"6.2.8"
+	],
+	"issue_id": "XRAY-704643",
+	"project_keys": [],
+	"applicability": null,
+	"applicability_result": "not_covered",
+	"summary": "Description\n\nIn Spring Framework, versions 6.0.x as of 6.0.5, versions 6.1.x and 6.2.x, an application is vulnerable to a reflected file download (RFD) attack when it sets a “Content-Disposition” header with a non-ASCII charset, where the filename attribute is derived from user-supplied input.\n\nSpecifically, an application is vulnerable when all the following are true:\n\n  *  The header is prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via ContentDisposition.Builder#filename(String, Charset).\n  *  The value for the filename is derived from user-supplied input.\n  *  The application does not sanitize the user-supplied input.\n  *  The downloaded content of the response is injected with malicious commands by the attacker (see RFD paper reference for details).\n\n\nAn application is not vulnerable if any of the following is true:\n\n  *  The application does not set a “Content-Disposition” response header.\n  *  The header is not prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via one of:  *  ContentDisposition.Builder#filename(String), or\n  *  ContentDisposition.Builder#filename(String, ASCII)\n\n\n\n  *  The filename is not derived from user-supplied input.\n  *  The filename is derived from user-supplied input but sanitized by the application.\n  *  The attacker cannot inject malicious content in the downloaded content of the response.\n\n\nAffected Spring Products and VersionsSpring Framework:\n\n  *  6.2.0 - 6.2.7\n  *  6.1.0 - 6.1.20\n  *  6.0.5 - 6.0.28\n  *  Older, unsupported versions are not affected\n\n\nMitigationUsers of affected versions should upgrade to the corresponding fixed version.\n\nAffected version(s)Fix versionAvailability6.2.x6.2.8OSS6.1.x6.1.21OSS6.0.x6.0.29 Commercial https://enterprise.spring.io/ No further mitigation steps are necessary.\n\n\nCWE-113 in `Content-Disposition` handling in VMware Spring Framework versions 6.0.5 to 6.2.7 allows remote attackers to launch Reflected File Download (RFD) attacks via unsanitized user input in `Con...",
+	"vulnerable_component": "gav://org.springframework:spring-web:6.2.7",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-41234",
+	"cvss_v3_score": 6.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N"
+	}
+	],
+	"cvss3_max_score": 6.5,
+	"severity": "Medium",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/BOOT-INF/lib/spring-web-6.2.7.jar",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.springframework:spring-web:6.2.7"
+	],
+	"fixed_versions": [
+	"6.1.21",
+	"6.2.8"
+	],
+	"issue_id": "XRAY-704643",
+	"project_keys": [],
+	"applicability": null,
+	"applicability_result": "not_covered",
+	"summary": "Description\n\nIn Spring Framework, versions 6.0.x as of 6.0.5, versions 6.1.x and 6.2.x, an application is vulnerable to a reflected file download (RFD) attack when it sets a “Content-Disposition” header with a non-ASCII charset, where the filename attribute is derived from user-supplied input.\n\nSpecifically, an application is vulnerable when all the following are true:\n\n  *  The header is prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via ContentDisposition.Builder#filename(String, Charset).\n  *  The value for the filename is derived from user-supplied input.\n  *  The application does not sanitize the user-supplied input.\n  *  The downloaded content of the response is injected with malicious commands by the attacker (see RFD paper reference for details).\n\n\nAn application is not vulnerable if any of the following is true:\n\n  *  The application does not set a “Content-Disposition” response header.\n  *  The header is not prepared with org.springframework.http.ContentDisposition.\n  *  The filename is set via one of:  *  ContentDisposition.Builder#filename(String), or\n  *  ContentDisposition.Builder#filename(String, ASCII)\n\n\n\n  *  The filename is not derived from user-supplied input.\n  *  The filename is derived from user-supplied input but sanitized by the application.\n  *  The attacker cannot inject malicious content in the downloaded content of the response.\n\n\nAffected Spring Products and VersionsSpring Framework:\n\n  *  6.2.0 - 6.2.7\n  *  6.1.0 - 6.1.20\n  *  6.0.5 - 6.0.28\n  *  Older, unsupported versions are not affected\n\n\nMitigationUsers of affected versions should upgrade to the corresponding fixed version.\n\nAffected version(s)Fix versionAvailability6.2.x6.2.8OSS6.1.x6.1.21OSS6.0.x6.0.29 Commercial https://enterprise.spring.io/ No further mitigation steps are necessary.\n\n\nCWE-113 in `Content-Disposition` handling in VMware Spring Framework versions 6.0.5 to 6.2.7 allows remote attackers to launch Reflected File Download (RFD) attacks via unsanitized user input in `Con...",
+	"vulnerable_component": "gav://org.springframework:spring-web:6.2.7",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-49125",
+	"cvss_v3_score": 7.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+	}
+	],
+	"cvss3_max_score": 7.5,
+	"severity": "Medium",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/META-INF/sbom/application.cdx.json/gav:/org.apache.tomcat.embed:tomcat-embed-core:10.1.41/org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.springframework.samples:spring-petclinic:3.5.0-SNAPSHOT",
+	"gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41"
+	],
+	"fixed_versions": [
+	"9.0.106",
+	"11.0.8",
+	"10.1.42"
+	],
+	"issue_id": "XRAY-704764",
+	"project_keys": [],
+	"applicability": true,
+	"applicability_result": "applicable",
+	"summary": "Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Tomcat.  When using PreResources or PostResources mounted other than at the root of the web application, it was possible to access those resources via an unexpected path. That path was likely not to be protected by the same security constraints as the expected path, allowing those security constraints to be bypassed.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: 8.5.0 through 8.5.100. Other, older, EOL versions \nmay also be affected.\n\n\nUsers are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.",
+	"vulnerable_component": "gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+,{
+	"cves": [
+	{
+	"cve": "CVE-2025-49125",
+	"cvss_v3_score": 7.5,
+	"cvss_v3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+	}
+	],
+	"cvss3_max_score": 7.5,
+	"severity": "Medium",
+	"component_physical_path": "sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz/app/app.jar/BOOT-INF/lib/tomcat-embed-core-10.1.41.jar",
+	"impact_path": [
+	"docker://spring-petclinic:latest",
+	"generic://sha256:72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90/sha256__72b8700311b146425706a607364aa1748d95159e17e48174be131da8440a9f90.tar.gz",
+	"generic://sha256:24a56c786009fd1978c6caa24229100567cd5e51d339b747b874486fde6c4be7/app.jar",
+	"gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41"
+	],
+	"fixed_versions": [
+	"9.0.106",
+	"11.0.8",
+	"10.1.42"
+	],
+	"issue_id": "XRAY-704764",
+	"project_keys": [],
+	"applicability": true,
+	"applicability_result": "applicable",
+	"summary": "Authentication Bypass Using an Alternate Path or Channel vulnerability in Apache Tomcat.  When using PreResources or PostResources mounted other than at the root of the web application, it was possible to access those resources via an unexpected path. That path was likely not to be protected by the same security constraints as the expected path, allowing those security constraints to be bypassed.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.7, from 10.1.0-M1 through 10.1.41, from 9.0.0.M1 through 9.0.105.\nThe following versions were EOL at the time the CVE was created but are \nknown to be affected: 8.5.0 through 8.5.100. Other, older, EOL versions \nmay also be affected.\n\n\nUsers are recommended to upgrade to version 11.0.8, 10.1.42 or 9.0.106, which fix the issue.",
+	"vulnerable_component": "gav://org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
+	"impacted_artifact": "docker://spring-petclinic:latest",
+	"path": "petclinic-docker-local/spring-petclinic/latest/manifest.json",
+	"published": "1970-01-01T00:00:00Z",
+	"artifact_scan_time": "1970-01-01T00:00:00Z",
+	"package_type": "",
+	"provider": "",
+	"description": "",
+	"references": []
+	}
+]}
